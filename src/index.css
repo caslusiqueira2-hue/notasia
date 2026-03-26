@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #0f172a;
+  background-color: #f8fafc;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50;
+  }
+}
+
+.premium-card {
+  @apply bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm transition-all duration-300;
+}
+
+.premium-card:hover {
+  @apply shadow-md border-primary-500/30;
+}
+
+.sidebar-item {
+  @apply flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-primary-600 dark:hover:text-primary-400;
+}
+
+.sidebar-item-active {
+  @apply bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400 font-medium;
+}
+
+.bottom-nav-item {
+  @apply flex flex-col items-center justify-center p-2 rounded-xl transition-all duration-200 text-slate-500 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400;
+}
+
+.bottom-nav-item-active {
+  @apply text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/10;
+}
+
+.btn-primary {
+  @apply bg-primary-600 text-white px-6 py-2.5 rounded-xl font-medium transition-all duration-200 hover:bg-primary-700 active:scale-95 shadow-lg shadow-primary-500/20;
+}
+
+.btn-secondary {
+  @apply bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 px-6 py-2.5 rounded-xl font-medium transition-all duration-200 hover:bg-slate-50 dark:hover:bg-slate-800 active:scale-95;
+}
+
+.urgency-low { border-left: 4px solid #10b981; }
+.urgency-medium { border-left: 4px solid #f59e0b; }
+.urgency-high { border-left: 4px solid #ef4444; }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-200 dark:bg-slate-800 rounded-full hover:bg-slate-300 dark:hover:bg-slate-700;
+}
